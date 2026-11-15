@@ -1,0 +1,25 @@
+HTML
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Redirigiendo...</title>
+    <script>
+        // Lee lo que el usuario escribe después de la barra (ej: /cliente1)
+        const path = window.location.pathname.replace('/', '');
+        
+        // PEGA AQUÍ TU URL MAESTRA DE GOOGLE APPS SCRIPT (la que creaste recién)
+        const urlMaestra = "https://script.google.com/macros/s/AKfycbx1xnfsB0nlyEN4qmxBUchvfn1LWFmtcMliiU3Hr2hkaPNI_YJLLzoRAIMv9Xm3JqjEDA/exec";
+        
+        if (path) {
+            // Redirige al script de Google sumando el cliente (?p=...)
+            window.location.replace(urlMaestra + "?p=" + path);
+        } else {
+            document.write("<h3>Error: Cliente no especificado en el enlace.</h3>");
+        }
+    </script>
+</head>
+<body>
+    <p>Cargando tu sistema...</p>
+</body>
+</html>
